@@ -10,7 +10,6 @@
   color: #f8fbff;
   padding: clamp(2.25rem, 6vw, 4rem) clamp(1.5rem, 8vw, 4.75rem);
   position: relative;
-=======
   justify-content: space-between;
   background: radial-gradient(circle at top left, rgba(0, 163, 255, 0.18), transparent 45%),
     radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.12), transparent 45%),
@@ -146,7 +145,6 @@
   font-size: clamp(1.45rem, 2.5vw, 1.75rem);
   font-weight: 600;
   color: #f0f6ff;
-=======
   display: flex;
   gap: 0.85rem;
   align-items: flex-start;
@@ -219,7 +217,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-=======
   gap: 1rem;
 }
 
@@ -362,7 +359,6 @@
 .landing__social-button--google {
   background: linear-gradient(135deg, #174ea6 0%, #4285f4 100%);
   color: #ffffff;
-=======
 .landing__checkbox {
   display: flex;
   align-items: flex-start;
@@ -456,8 +452,6 @@
   background: linear-gradient(90deg, rgba(148, 163, 184, 0), rgba(148, 163, 184, 0.5), rgba(148, 163, 184, 0));
 }
 
-=======
-
 .landing__footer {
   display: flex;
   flex-wrap: wrap;
@@ -468,7 +462,6 @@
   margin: 0 auto;
   font-size: 0.85rem;
   color: #94a3c4;
-=======
   color: #94a3b8;
 
 }
@@ -640,7 +633,6 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-=======
 @media (max-width: 900px) {
   .landing {
     padding: 2rem 1.5rem;
@@ -678,7 +670,6 @@
 
   .landing__panel {
     margin: 0 auto;
-=======
     gap: 2.5rem;
 
   }
@@ -696,7 +687,6 @@
   .landing__modal-close {
     top: 0.75rem;
     right: 0.75rem;
-=======
   .landing__tabs {
     width: 100%;
     justify-content: space-between;
