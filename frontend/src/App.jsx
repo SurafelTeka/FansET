@@ -18,9 +18,25 @@ const AppLayout = ({ children }) => (
   </div>
 );
 
+const renderProtectedPage = (PageComponent) => (
+  <ProtectedRoute>
+    <AppLayout>
+      <PageComponent />
+    </AppLayout>
+  </ProtectedRoute>
+);
+
 const App = () => (
   <Routes>
     <Route path="/" element={<LandingPage />} />
+
+    <Route path="/home" element={renderProtectedPage(HomePage)} />
+    <Route path="/profile" element={renderProtectedPage(ProfilePage)} />
+    <Route path="/messages" element={renderProtectedPage(MessagesPage)} />
+    <Route path="/collections" element={renderProtectedPage(CollectionsPage)} />
+    <Route path="/add-card" element={renderProtectedPage(AddCardPage)} />
+    <Route path="/notifications" element={renderProtectedPage(NotificationsPage)} />
+
     <Route
       path="/home"
       element={(
@@ -81,6 +97,7 @@ const App = () => (
         </ProtectedRoute>
       )}
     />
+
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );
