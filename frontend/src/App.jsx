@@ -29,12 +29,75 @@ const renderProtectedPage = (PageComponent) => (
 const App = () => (
   <Routes>
     <Route path="/" element={<LandingPage />} />
+
     <Route path="/home" element={renderProtectedPage(HomePage)} />
     <Route path="/profile" element={renderProtectedPage(ProfilePage)} />
     <Route path="/messages" element={renderProtectedPage(MessagesPage)} />
     <Route path="/collections" element={renderProtectedPage(CollectionsPage)} />
     <Route path="/add-card" element={renderProtectedPage(AddCardPage)} />
     <Route path="/notifications" element={renderProtectedPage(NotificationsPage)} />
+
+    <Route
+      path="/home"
+      element={(
+        <ProtectedRoute>
+          <AppLayout>
+            <HomePage />
+          </AppLayout>
+        </ProtectedRoute>
+      )}
+    />
+    <Route
+      path="/profile"
+      element={(
+        <ProtectedRoute>
+          <AppLayout>
+            <ProfilePage />
+          </AppLayout>
+        </ProtectedRoute>
+      )}
+    />
+    <Route
+      path="/messages"
+      element={(
+        <ProtectedRoute>
+          <AppLayout>
+            <MessagesPage />
+          </AppLayout>
+        </ProtectedRoute>
+      )}
+    />
+    <Route
+      path="/collections"
+      element={(
+        <ProtectedRoute>
+          <AppLayout>
+            <CollectionsPage />
+          </AppLayout>
+        </ProtectedRoute>
+      )}
+    />
+    <Route
+      path="/add-card"
+      element={(
+        <ProtectedRoute>
+          <AppLayout>
+            <AddCardPage />
+          </AppLayout>
+        </ProtectedRoute>
+      )}
+    />
+    <Route
+      path="/notifications"
+      element={(
+        <ProtectedRoute>
+          <AppLayout>
+            <NotificationsPage />
+          </AppLayout>
+        </ProtectedRoute>
+      )}
+    />
+
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );
