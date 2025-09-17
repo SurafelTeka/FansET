@@ -1,0 +1,26 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.form-input__label {
+  font-weight: 600;
+}
+
+.form-input input,
+.form-input select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.form-input__hint {
+  color: #64748b;
+  font-size: 0.75rem;
+}

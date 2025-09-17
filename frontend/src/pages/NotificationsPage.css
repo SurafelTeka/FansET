@@ -1,0 +1,72 @@
+.notifications {
+  gap: 1.5rem;
+}
+
+.notifications__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.notifications__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.notifications__tab {
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: #ffffff;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.notifications__tab--active {
+  border-color: var(--fansly-blue);
+  color: var(--fansly-blue);
+}
+
+.notifications__icon {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  color: #334155;
+}
+
+.notifications__empty {
+  padding: 2.5rem 1.5rem;
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  text-align: center;
+  color: #475467;
+  font-weight: 600;
+}
+
+.notifications__suggestions {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 1rem;
+}
+
+.notifications__suggestions-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.notifications__footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #64748b;
+  font-size: 0.85rem;
+}
