@@ -1,0 +1,238 @@
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(circle at top left, rgba(0, 163, 255, 0.2), transparent 45%),
+    #000000;
+  color: #f8fafc;
+  padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+}
+
+.landing__hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  align-items: start;
+}
+
+.landing__brand h1 {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  margin-bottom: 0.25rem;
+}
+
+.landing__brand p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #e2e8f0;
+}
+
+.landing__brand ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.landing__brand li {
+  font-size: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  color: #cbd5f5;
+}
+
+.landing__brand span {
+  color: #38bdf8;
+}
+
+.landing__logo {
+  margin-bottom: 1.5rem;
+}
+
+.landing__form {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.35));
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 25px 45px rgba(15, 23, 42, 0.35);
+}
+
+.landing__actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.landing__button {
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}
+
+.landing__button--primary {
+  background: linear-gradient(135deg, #00a3ff, #38bdf8);
+  color: #ffffff;
+}
+
+.landing__button--outline {
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #f8fafc;
+  background: transparent;
+}
+
+.landing__social {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.landing__social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background-color: rgba(15, 23, 42, 0.6);
+  color: #e0f2fe;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.landing__social-button--twitch {
+  border-color: rgba(147, 51, 234, 0.45);
+  background: rgba(91, 33, 182, 0.4);
+}
+
+.landing__social-button--green {
+  border-color: rgba(34, 197, 94, 0.6);
+  background: rgba(22, 163, 74, 0.35);
+  color: #bbf7d0;
+}
+
+.landing__icon {
+  font-size: 1.25rem;
+}
+
+.landing__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.landing__checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+.landing__checkbox--inline {
+  align-items: flex-start;
+}
+
+.landing__fine-print {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.landing__fine-print a {
+  color: #38bdf8;
+}
+
+.landing__comparison {
+  margin-top: 3rem;
+}
+
+.landing__card {
+  background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
+  color: #0f172a;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  max-width: 520px;
+}
+
+.landing__card form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.landing__card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.landing__button--ghost {
+  background-color: rgba(14, 116, 144, 0.08);
+  color: #0f172a;
+  border: 1px solid rgba(14, 165, 233, 0.35);
+}
+
+.landing__social--compact {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.landing__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 3rem;
+}
+
+.landing__footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.landing__footer a {
+  color: #cbd5f5;
+  text-decoration: none;
+}
+
+.landing__footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.landing__footer select {
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  .landing {
+    padding: 2rem 1.25rem;
+    gap: 2rem;
+  }
+
+  .landing__hero {
+    gap: 2rem;
+  }
+
+  .landing__comparison {
+    margin-top: 2rem;
+  }
+}

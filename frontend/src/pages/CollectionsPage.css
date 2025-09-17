@@ -1,0 +1,182 @@
+.collections {
+  gap: 1.5rem;
+}
+
+.collections__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.collections__tabs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.collections__tab {
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: #ffffff;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.collections__tab--active {
+  border-color: var(--fansly-blue);
+  color: var(--fansly-blue);
+}
+
+.collections__search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background-color: #f1f5f9;
+  padding: 0.5rem 0.75rem;
+}
+
+.collections__search input {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.collections__search button {
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  color: var(--fansly-blue);
+}
+
+.collections__body {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.collections__lists {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.collections__list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collections__list-items {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.collections__list-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 0.75rem;
+}
+
+.collections__list-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.collections__empty-groups h4 {
+  margin-bottom: 0.25rem;
+}
+
+.collections__empty-groups p {
+  margin: 0 0 0.75rem;
+  color: #94a3b8;
+}
+
+.collections__aside {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.collections__bookmarks,
+.collections__following {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.collections__following-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.collections__search--inline {
+  margin-left: 0;
+}
+
+.collections__following-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.collections__following-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.collections__following-card img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.collections__following-card button {
+  margin-left: auto;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  font-weight: 600;
+}
+
+.collections__empty {
+  color: #94a3b8;
+  margin: 0.5rem 0 0;
+}
+
+.collections__footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1100px) {
+  .collections__body {
+    grid-template-columns: 1fr;
+  }
+}
