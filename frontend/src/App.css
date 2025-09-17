@@ -17,6 +17,15 @@
   width: 100%;
 }
 
+.route-guard__loading {
+  display: grid;
+  place-items: center;
+  min-height: 50vh;
+  color: var(--fanset-dark);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 @media (max-width: 1024px) {
   .app-layout {
     flex-direction: column;

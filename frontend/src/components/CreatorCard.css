@@ -27,7 +27,7 @@
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background-color: var(--fansly-blue);
+  background-color: var(--fanset-blue);
   color: #ffffff;
   font-size: 0.75rem;
   padding: 0.25rem;
@@ -55,7 +55,7 @@
 
 .creator-card__price {
   font-weight: 600;
-  color: var(--fansly-green);
+  color: var(--fanset-green);
 }
 
 .creator-card__actions {
@@ -73,11 +73,11 @@
 }
 
 .creator-card__primary {
-  background: linear-gradient(135deg, var(--fansly-blue), #38bdf8);
+  background: linear-gradient(135deg, var(--fanset-blue), #38bdf8);
   color: #ffffff;
 }
 
 .creator-card__secondary {
   background-color: rgba(34, 197, 94, 0.1);
-  color: var(--fansly-green);
+  color: var(--fanset-green);
 }

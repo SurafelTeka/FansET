@@ -3,11 +3,12 @@
   flex-direction: column;
   gap: 0.4rem;
   font-size: 0.9rem;
-  color: #1f2937;
+  color: inherit;
 }
 
 .form-input__label {
   font-weight: 600;
+  color: inherit;
 }
 
 .form-input input,
@@ -21,6 +22,6 @@
 }
 
 .form-input__hint {
-  color: #64748b;
+  color: rgba(148, 163, 184, 0.9);
   font-size: 0.75rem;
 }

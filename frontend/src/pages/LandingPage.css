@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
   gap: clamp(2.5rem, 5vw, 4rem);
   background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.22) 0%, rgba(2, 6, 23, 0) 55%),
     radial-gradient(circle at 90% 10%, rgba(129, 140, 248, 0.18) 0%, rgba(15, 23, 42, 0) 50%),
@@ -9,10 +10,20 @@
   color: #f8fbff;
   padding: clamp(2.25rem, 6vw, 4rem) clamp(1.5rem, 8vw, 4.75rem);
   position: relative;
+=======
+  justify-content: space-between;
+  background: radial-gradient(circle at top left, rgba(0, 163, 255, 0.18), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.12), transparent 45%),
+    #020617;
+  color: #f8fafc;
+  padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+  gap: 3rem;
+
 }
 
 .landing__hero {
   display: grid;
+
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: center;
   gap: clamp(2.25rem, 6vw, 5rem);
@@ -66,6 +77,28 @@
 }
 
 .landing__brand ul {
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.landing__brand h1 {
+  font-size: clamp(2.75rem, 6vw, 3.9rem);
+  margin-bottom: 0.5rem;
+}
+
+.landing__brand p {
+  font-size: 1.1rem;
+  margin-bottom: 1.75rem;
+  color: #cbd5f5;
+  max-width: 32rem;
+}
+
+.landing__brand ul {
+  display: grid;
+  gap: 1rem;
+
   margin: 0;
   padding: 0;
   list-style: none;
@@ -74,6 +107,7 @@
 }
 
 .landing__brand li {
+
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -112,10 +146,72 @@
   font-size: clamp(1.45rem, 2.5vw, 1.75rem);
   font-weight: 600;
   color: #f0f6ff;
+=======
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  font-size: 1rem;
+  color: #e0f2fe;
 }
 
-.landing__actions {
+.landing__brand span {
+  color: var(--fanset-blue);
+  font-size: 1.25rem;
+}
+
+.landing__logo {
+  margin-bottom: 1.75rem;
+}
+
+.landing__form {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 1.75rem;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.35);
+}
+
+.landing__form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.landing__form-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.landing__tabs {
+  display: inline-flex;
+  background: rgba(15, 23, 42, 0.65);
+  border-radius: 999px;
+  padding: 0.35rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.landing__tab {
+  border: none;
+  background: transparent;
+  color: #cbd5f5;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.landing__tab--active {
+  background: linear-gradient(135deg, var(--fanset-blue), #38bdf8);
+  color: #021018;
+}
+
+.landing__fields {
   display: grid;
+
   gap: 0.85rem;
 }
 
@@ -123,10 +219,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+=======
+  gap: 1rem;
+}
+
+.landing__button {
+  padding: 0.95rem 1.5rem;
+
   border-radius: 999px;
   padding: 0.95rem 1.6rem;
   font-size: 1.05rem;
   font-weight: 600;
+
   border: 0;
   color: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border 0.2s ease;
@@ -163,6 +267,24 @@
 .landing__button:focus-visible {
   outline: 3px solid rgba(56, 189, 248, 0.45);
   outline-offset: 2px;
+
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing__button--primary {
+  background: linear-gradient(135deg, var(--fanset-blue), #38bdf8);
+  color: #020617;
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.3);
+}
+
+.landing__button--primary:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  box-shadow: none;
+
 }
 
 .landing__social {
@@ -173,15 +295,26 @@
 .landing__social-button {
   display: flex;
   align-items: center;
+
   gap: 0.9rem;
   width: 100%;
   border-radius: 999px;
   padding: 0.85rem 1.1rem;
   border: 1px solid transparent;
   font-size: 0.98rem;
+
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background-color: rgba(15, 23, 42, 0.6);
+  color: #e0f2fe;
+  padding: 0.85rem 1rem;
+
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
 }
+
 
 .landing__social-button:hover,
 .landing__social-button:focus-visible {
@@ -192,6 +325,11 @@
 .landing__social-button:focus-visible {
   outline: 3px solid rgba(96, 165, 250, 0.45);
   outline-offset: 2px;
+
+.landing__social-button--twitch {
+  border-color: rgba(147, 51, 234, 0.5);
+  background: rgba(91, 33, 182, 0.45);
+
 }
 
 .landing__social-icon {
@@ -224,6 +362,39 @@
 .landing__social-button--google {
   background: linear-gradient(135deg, #174ea6 0%, #4285f4 100%);
   color: #ffffff;
+=======
+.landing__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.landing__checkbox input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.15rem;
+}
+
+.landing__status {
+  font-size: 0.95rem;
+  margin: -0.25rem 0 0;
+  color: #cbd5f5;
+}
+
+.landing__status--error {
+  color: #fca5a5;
+}
+
+.landing__status--success {
+  color: #bbf7d0;
+}
+
+.landing__fine-print {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.6;
 }
 
 .landing__social-button--google .landing__social-icon {
@@ -285,6 +456,8 @@
   background: linear-gradient(90deg, rgba(148, 163, 184, 0), rgba(148, 163, 184, 0.5), rgba(148, 163, 184, 0));
 }
 
+=======
+
 .landing__footer {
   display: flex;
   flex-wrap: wrap;
@@ -295,6 +468,9 @@
   margin: 0 auto;
   font-size: 0.85rem;
   color: #94a3c4;
+=======
+  color: #94a3b8;
+
 }
 
 .landing__footer nav {
@@ -464,6 +640,12 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+=======
+@media (max-width: 900px) {
+  .landing {
+    padding: 2rem 1.5rem;
+    gap: 2.5rem;
+
   }
 }
 
@@ -496,6 +678,9 @@
 
   .landing__panel {
     margin: 0 auto;
+=======
+    gap: 2.5rem;
+
   }
 }
 
@@ -511,5 +696,14 @@
   .landing__modal-close {
     top: 0.75rem;
     right: 0.75rem;
+=======
+  .landing__tabs {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .landing__tab {
+    flex: 1;
+
   }
 }
