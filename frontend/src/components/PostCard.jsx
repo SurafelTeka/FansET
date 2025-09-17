@@ -32,7 +32,7 @@ const PostCard = ({ post }) => (
     </footer>
   </article>
 );
-=======
+
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import './PostCard.css';
@@ -103,7 +103,7 @@ PostCard.propTypes = {
     author: PropTypes.string.isRequired,
 
     initials: PropTypes.string.isRequired,
-=======
+
     handle: PropTypes.string,
     initials: PropTypes.string,
 
