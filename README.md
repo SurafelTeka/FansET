@@ -1,23 +1,26 @@
-# FansET — Fansly-Style OnlyFans Clone Boilerplate
+# FansET — Creator subscription platform starter
 
-A monorepo starter kit for building an OnlyFans-style experience with a modern, mobile-first React frontend, an Express/Node.js API layer, and MongoDB-ready database utilities. All UI screens are inspired by the supplied reference screenshots, including a dark landing page, feed, profile, notifications, collections, messages, and billing flows.
+FansET is a full-stack starter kit for building a modern creator subscription experience. The Vite + React frontend ships with a
+Fansly-inspired interface restyled for the FansET brand, while the Express backend exposes real authentication endpoints,
+creator discovery data, and Mongo-ready database utilities.
 
 ## Repository structure
 
 ```
 .
-├── frontend/        # Vite + React single-page app with mock data and static routes
-│   ├── public/
-│   ├── src/
-│   │   ├── components/   # Sidebar, Header, cards, shared form elements
-│   │   ├── data/         # Mock creators, posts, collections, transactions
-│   │   └── pages/        # Landing, Home, Profile, Messages, Collections, Add Card, Notifications
-├── backend/         # Express server boilerplate with sample routes
+├── frontend/        # React single-page application powered by Vite
+│   ├── src/components/   # Sidebar, Header, PostCard, shared form elements and route guards
+│   ├── src/context/      # Auth provider with JWT-aware session persistence
+│   ├── src/pages/        # Landing, Home, Profile, Messages, Collections, Billing, Notifications
+│   ├── src/services/     # API client used across the app
+│   └── src/data/         # Fallback content used when the API is offline
+├── backend/         # Express server with JWT auth routes and content endpoints
 │   └── src/
-│       ├── routes/      # API routing examples returning mock data
-│       └── server.js    # App bootstrap with security middleware
-├── database/        # Mongo/Mongoose connection helpers
-├── .gitignore
+│       ├── controllers/  # Auth + content handlers
+│       ├── middleware/   # JWT verification middleware
+│       ├── models/       # Mongoose user schema
+│       └── routes/       # API router composition
+├── database/        # MongoDB connection helpers
 └── README.md
 ```
 
@@ -28,16 +31,22 @@ A monorepo starter kit for building an OnlyFans-style experience with a modern, 
    cd frontend
    npm install
    ```
-2. Start the development server:
+2. (Optional) point the SPA at a different API host by creating a `.env` file with `VITE_API_BASE_URL`. The default is
+   `http://localhost:5000/api`.
+3. Start the development server:
    ```bash
    npm run dev
    ```
-3. Build for production:
+4. Build for production:
    ```bash
    npm run build
    ```
 
-The React SPA is configured with React Router (`App.js`) and includes reusable components (`Sidebar`, `Header`, `PostCard`, `CreatorCard`, `FormInput`). Pages reflect the requested UI layouts, with mock data living in `src/data/mockData.js`. All forms include age-confirmation checkboxes, and footer legal links appear on every internal screen.
+Key features:
+- Landing page now ships with a FansET branded signup/login panel wired to the backend authentication endpoints.
+- Auth state is provided via `AuthContext`, persisted in `localStorage`, and consumed through a `useAuth` hook.
+- App routes beyond the landing screen are protected with `ProtectedRoute` and only render for authenticated users.
+- Home feed fetches creators and posts from the backend with graceful fallbacks to the mock data bundle when offline.
 
 ## Backend (Node.js + Express)
 
@@ -46,7 +55,13 @@ The React SPA is configured with React Router (`App.js`) and includes reusable c
    cd backend
    npm install
    ```
-2. Configure environment (optional) by creating a `.env` file with `PORT` and `MONGODB_URI` if you need to override defaults.
+2. Create a `.env` file (optional) to override defaults:
+   ```env
+   PORT=5000
+   MONGODB_URI=mongodb://localhost:27017/fanset
+   JWT_SECRET=super-secret-token
+   JWT_EXPIRES_IN=7d
+   ```
 3. Run in development mode with hot reloading:
    ```bash
    npm run dev
@@ -56,23 +71,35 @@ The React SPA is configured with React Router (`App.js`) and includes reusable c
    npm start
    ```
 
-The API exposes mock `/api/creators` and `/api/posts` endpoints. Security middleware (Helmet, CORS) and request logging (Morgan) are pre-wired. Database connectivity is deferred to the shared `database/connection.js` utility which targets MongoDB via Mongoose.
+### API overview
+
+| Method | Endpoint          | Description                                    |
+| ------ | ----------------- | ---------------------------------------------- |
+| POST   | `/api/auth/register` | Create a new account, returning a JWT + profile |
+| POST   | `/api/auth/login`    | Sign in with email/username + password        |
+| GET    | `/api/auth/me`       | Fetch the authenticated user (requires token) |
+| GET    | `/api/creators`      | Discover featured FansET creators             |
+| GET    | `/api/posts`         | Pull the curated FansET home feed             |
+
+All authenticated requests expect a `Bearer <token>` header. Passwords are hashed with `bcryptjs` and JWTs are signed with the
+configurable `JWT_SECRET`.
 
 ## Database utilities
 
-The `database/connection.js` module provides `connectDatabase` and `disconnectDatabase` helpers with sane defaults (`mongodb://localhost:27017/fansly_clone`). Adjust the URI in your environment variables as needed.
+`database/connection.js` exposes `connectDatabase` and `disconnectDatabase` helpers. By default the API targets
+`mongodb://localhost:27017/fanset`. Update `MONGODB_URI` in your environment to point at another instance.
 
 ## Testing & linting
 
-* Frontend lint: `cd frontend && npm run lint`
-* Backend lint: `cd backend && npm run lint`
+- Frontend lint: `cd frontend && npm run lint`
+- Backend lint: `cd backend && npm run lint`
 
-No automated tests are bundled, but the directory structure is ready for Jest, Vitest, Supertest, or Cypress should you decide to extend the stack.
+## Design tokens & accessibility
 
-## Assets & accessibility
+- Primary palette: FansET blue (`#00A3FF`), emerald accents (`#22C55E`), deep night background (`#020617`).
+- Landing layout embraces large typography, glassmorphism panels, and high-contrast CTAs.
+- Components include descriptive aria labels, keyboard-friendly controls, and minimum 18+ confirmation checkboxes where
+  required.
 
-* Color palette: Fansly blue (`#00A3FF`), green accents (`#22C55E`), white/light gray surfaces, dark landing hero (`#000000`).
-* Mobile-first design with responsive breakpoints and flex/grid layouts for all pages.
-* Semantic headings, descriptive alt text, and focus-friendly controls across the mock UI.
-
-> **Disclaimer:** This boilerplate ships with static/mock data only. No real authentication, billing, or streaming integrations are active.
+> **Disclaimer:** No real billing or streaming integrations are present. The stack focuses on auth, layout, and data flow
+plumbing so you can extend it to production use cases.

@@ -23,8 +23,8 @@
 }
 
 .collections__tab--active {
-  border-color: var(--fansly-blue);
-  color: var(--fansly-blue);
+  border-color: var(--fanset-blue);
+  color: var(--fanset-blue);
 }
 
 .collections__search {
@@ -47,7 +47,7 @@
   border: none;
   background: transparent;
   font-size: 1.25rem;
-  color: var(--fansly-blue);
+  color: var(--fanset-blue);
 }
 
 .collections__body {
