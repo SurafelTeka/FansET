@@ -238,7 +238,7 @@ const LandingPage = () => {
         </div>
       </div>
     );
-=======
+
 import { useNavigate } from 'react-router-dom';
 import FormInput from '../components/FormInput.jsx';
 import useAuth from '../hooks/useAuth.js';
