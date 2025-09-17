@@ -30,7 +30,7 @@ const App = () => (
         <AppLayout>
           <HomePage />
         </AppLayout>
-=======
+
         <ProtectedRoute>
           <AppLayout>
             <HomePage />
@@ -78,7 +78,7 @@ const App = () => (
         <AppLayout>
           <CollectionsPage />
         </AppLayout>
-=======
+
         <ProtectedRoute>
           <AppLayout>
             <CollectionsPage />
@@ -94,7 +94,7 @@ const App = () => (
         <AppLayout>
           <AddCardPage />
         </AppLayout>
-=======
+
         <ProtectedRoute>
           <AppLayout>
             <AddCardPage />
@@ -110,7 +110,7 @@ const App = () => (
         <AppLayout>
           <NotificationsPage />
         </AppLayout>
-=======
+
         <ProtectedRoute>
           <AppLayout>
             <NotificationsPage />
