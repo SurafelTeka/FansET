@@ -5,12 +5,12 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --fansly-blue: #00a3ff;
-  --fansly-blue-dark: #0082cc;
-  --fansly-green: #22c55e;
-  --fansly-dark: #0f172a;
-  --fansly-bg: #f1f5f9;
-  --fansly-border: #e2e8f0;
+  --fanset-blue: #00a3ff;
+  --fanset-blue-dark: #0082cc;
+  --fanset-green: #22c55e;
+  --fanset-dark: #0f172a;
+  --fanset-bg: #f1f5f9;
+  --fanset-border: #e2e8f0;
 }
 
 * {

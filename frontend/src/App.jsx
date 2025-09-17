@@ -8,6 +8,7 @@ import MessagesPage from './pages/MessagesPage';
 import CollectionsPage from './pages/CollectionsPage';
 import AddCardPage from './pages/AddCardPage';
 import NotificationsPage from './pages/NotificationsPage';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 import './App.css';
 
 const AppLayout = ({ children }) => (
@@ -23,49 +24,61 @@ const App = () => (
     <Route
       path="/home"
       element={(
-        <AppLayout>
-          <HomePage />
-        </AppLayout>
+        <ProtectedRoute>
+          <AppLayout>
+            <HomePage />
+          </AppLayout>
+        </ProtectedRoute>
       )}
     />
     <Route
       path="/profile"
       element={(
-        <AppLayout>
-          <ProfilePage />
-        </AppLayout>
+        <ProtectedRoute>
+          <AppLayout>
+            <ProfilePage />
+          </AppLayout>
+        </ProtectedRoute>
       )}
     />
     <Route
       path="/messages"
       element={(
-        <AppLayout>
-          <MessagesPage />
-        </AppLayout>
+        <ProtectedRoute>
+          <AppLayout>
+            <MessagesPage />
+          </AppLayout>
+        </ProtectedRoute>
       )}
     />
     <Route
       path="/collections"
       element={(
-        <AppLayout>
-          <CollectionsPage />
-        </AppLayout>
+        <ProtectedRoute>
+          <AppLayout>
+            <CollectionsPage />
+          </AppLayout>
+        </ProtectedRoute>
       )}
     />
     <Route
       path="/add-card"
       element={(
-        <AppLayout>
-          <AddCardPage />
-        </AppLayout>
+        <ProtectedRoute>
+          <AppLayout>
+            <AddCardPage />
+          </AppLayout>
+        </ProtectedRoute>
       )}
     />
     <Route
       path="/notifications"
       element={(
-        <AppLayout>
-          <NotificationsPage />
-        </AppLayout>
+        <ProtectedRoute>
+          <AppLayout>
+            <NotificationsPage />
+          </AppLayout>
+        </ProtectedRoute>
       )}
     />
     <Route path="*" element={<Navigate to="/" replace />} />

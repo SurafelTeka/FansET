@@ -25,8 +25,8 @@
 }
 
 .notifications__tab--active {
-  border-color: var(--fansly-blue);
-  color: var(--fansly-blue);
+  border-color: var(--fanset-blue);
+  color: var(--fanset-blue);
 }
 
 .notifications__icon {

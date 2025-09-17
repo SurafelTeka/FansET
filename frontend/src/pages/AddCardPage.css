@@ -17,8 +17,8 @@
 }
 
 .add-card__tab--active {
-  border-color: var(--fansly-blue);
-  color: var(--fansly-blue);
+  border-color: var(--fanset-blue);
+  color: var(--fanset-blue);
 }
 
 .add-card__body {
@@ -98,7 +98,7 @@
   padding: 0.85rem 2rem;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, var(--fansly-blue), #38bdf8);
+  background: linear-gradient(135deg, var(--fanset-blue), #38bdf8);
   color: #ffffff;
   font-weight: 700;
 }
@@ -128,7 +128,7 @@
   padding: 0.75rem 1rem;
   border-radius: 0.85rem;
   border: none;
-  background: linear-gradient(135deg, var(--fansly-blue), #38bdf8);
+  background: linear-gradient(135deg, var(--fanset-blue), #38bdf8);
   color: #ffffff;
   font-weight: 600;
 }

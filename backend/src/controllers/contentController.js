@@ -1,4 +1,37 @@
-export const posts = [
+const DEFAULT_CREATORS = [
+  {
+    id: 'creator-nova-kai',
+    name: 'Nova Kai',
+    handle: 'novakai',
+    price: 'Free',
+    image:
+      'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80',
+    isVerified: true,
+    categories: ['VR fitness', 'Livestreams']
+  },
+  {
+    id: 'creator-elysian-tide',
+    name: 'Elysian Tide',
+    handle: 'elysiantide',
+    price: '$12.99',
+    image:
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80',
+    isVerified: true,
+    categories: ['Underwater sets', 'Cinema edits']
+  },
+  {
+    id: 'creator-zen',
+    name: 'Zen Haru',
+    handle: 'zenharu',
+    price: '$7.50',
+    image:
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',
+    isVerified: false,
+    categories: ['Meditation', 'Q&A']
+  }
+];
+
+const DEFAULT_POSTS = [
   {
     id: 'post-aurora-studio',
     author: 'Aurora Skye',
@@ -40,45 +73,10 @@ export const posts = [
   }
 ];
 
-export const creators = [
-  {
-    id: 'creator-nova-kai',
-    name: 'Nova Kai',
-    handle: 'novakai',
-    price: 'Free',
-    image:
-      'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80',
-    isVerified: true
-  },
-  {
-    id: 'creator-elysian-tide',
-    name: 'Elysian Tide',
-    handle: 'elysiantide',
-    price: '$12.99',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80',
-    isVerified: true
-  },
-  {
-    id: 'creator-zen',
-    name: 'Zen Haru',
-    handle: 'zenharu',
-    price: '$7.50',
-    image:
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',
-    isVerified: false
-  }
-];
+export const listCreators = (_req, res) => {
+  res.json({ creators: DEFAULT_CREATORS });
+};
 
-export const collections = [
-  {
-    id: 'list-holographic-dreams',
-    name: 'Holographic Dreams',
-    users: 312,
-    posts: 18,
-    cover:
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=200&q=80'
-  }
-];
-
-export const transactions = [];
+export const listPosts = (_req, res) => {
+  res.json({ posts: DEFAULT_POSTS });
+};
