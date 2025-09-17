@@ -8,6 +8,7 @@ import MessagesPage from './pages/MessagesPage';
 import CollectionsPage from './pages/CollectionsPage';
 import AddCardPage from './pages/AddCardPage';
 import NotificationsPage from './pages/NotificationsPage';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 import './App.css';
 
 const AppLayout = ({ children }) => (
@@ -17,57 +18,23 @@ const AppLayout = ({ children }) => (
   </div>
 );
 
+const renderProtectedPage = (PageComponent) => (
+  <ProtectedRoute>
+    <AppLayout>
+      <PageComponent />
+    </AppLayout>
+  </ProtectedRoute>
+);
+
 const App = () => (
   <Routes>
     <Route path="/" element={<LandingPage />} />
-    <Route
-      path="/home"
-      element={(
-        <AppLayout>
-          <HomePage />
-        </AppLayout>
-      )}
-    />
-    <Route
-      path="/profile"
-      element={(
-        <AppLayout>
-          <ProfilePage />
-        </AppLayout>
-      )}
-    />
-    <Route
-      path="/messages"
-      element={(
-        <AppLayout>
-          <MessagesPage />
-        </AppLayout>
-      )}
-    />
-    <Route
-      path="/collections"
-      element={(
-        <AppLayout>
-          <CollectionsPage />
-        </AppLayout>
-      )}
-    />
-    <Route
-      path="/add-card"
-      element={(
-        <AppLayout>
-          <AddCardPage />
-        </AppLayout>
-      )}
-    />
-    <Route
-      path="/notifications"
-      element={(
-        <AppLayout>
-          <NotificationsPage />
-        </AppLayout>
-      )}
-    />
+    <Route path="/home" element={renderProtectedPage(HomePage)} />
+    <Route path="/profile" element={renderProtectedPage(ProfilePage)} />
+    <Route path="/messages" element={renderProtectedPage(MessagesPage)} />
+    <Route path="/collections" element={renderProtectedPage(CollectionsPage)} />
+    <Route path="/add-card" element={renderProtectedPage(AddCardPage)} />
+    <Route path="/notifications" element={renderProtectedPage(NotificationsPage)} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );

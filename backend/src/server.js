@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.get('/', (_req, res) => {
-  res.json({ status: 'Fansly clone API is running' });
+  res.json({ status: 'FansET API is running' });
 });
 
 app.use('/api', router);

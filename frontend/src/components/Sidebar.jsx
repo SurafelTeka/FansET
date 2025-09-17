@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import './Sidebar.css';
+import useAuth from '../hooks/useAuth.js';
 
 const navItems = [
   { to: '/home', label: 'Home', icon: '🏠' },
@@ -13,15 +14,34 @@ const navItems = [
   { to: '/more', label: 'More', icon: '⋯', disabled: true }
 ];
 
+const getInitials = (value) =>
+  value
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part[0]?.toUpperCase() ?? '')
+    .join('')
+    .slice(0, 2) || 'FE';
+
 const Sidebar = () => {
   const [darkMode, setDarkMode] = useState(false);
   const location = useLocation();
+  const { user, logout } = useAuth();
+
+  const initials = useMemo(() => (user?.displayName ? getInitials(user.displayName) : 'FE'), [user?.displayName]);
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <aside className={`sidebar ${darkMode ? 'sidebar--dark' : ''}`}>
       <div className="sidebar__top">
-        <div className="sidebar__avatar" aria-label="Fansly user avatar">
-          S
+        <div className="sidebar__avatar" aria-label="FansET user avatar">
+          {initials}
+        </div>
+        <div className="sidebar__user" aria-live="polite">
+          <strong>{user?.displayName ?? 'FansET Creator'}</strong>
+          {user?.username && <span>@{user.username}</span>}
         </div>
         <nav className="sidebar__nav">
           {navItems.map((item) => (
@@ -64,7 +84,7 @@ const Sidebar = () => {
             </span>
             <span>English</span>
           </button>
-          <button type="button" className="sidebar__toggle sidebar__logout">
+          <button type="button" className="sidebar__toggle sidebar__logout" onClick={handleLogout}>
             <span role="img" aria-label="logout">
               🚪
             </span>
