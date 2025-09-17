@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import './Sidebar.css';
-=======
 import React, { useMemo, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import './Sidebar.css';
@@ -23,7 +22,7 @@ const navItems = [
 const Sidebar = () => {
   const [darkMode, setDarkMode] = useState(false);
   const location = useLocation();
-=======
+
 const getInitials = (value) =>
   value
     .split(/\s+/)
@@ -50,7 +49,6 @@ const Sidebar = () => {
 
         <div className="sidebar__avatar" aria-label="Fansly user avatar">
           S
-=======
         <div className="sidebar__avatar" aria-label="FansET user avatar">
           {initials}
         </div>
@@ -102,7 +100,7 @@ const Sidebar = () => {
           </button>
 
           <button type="button" className="sidebar__toggle sidebar__logout">
-=======
+
           <button type="button" className="sidebar__toggle sidebar__logout" onClick={handleLogout}>
 
             <span role="img" aria-label="logout">
